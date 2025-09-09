@@ -6,15 +6,20 @@ psycopg2-binary  # Use apenas a versão binária para simplificar a instalação
 # Bibliotecas de banco de dados
 SQLAlchemy==2.0.34
 
-# Bibliotecas de IA e LLMs
-langchain-ollama
-langchain-google-genai
-upstash_vector
-openai
-
 # Ferramentas e utilitários
 pydantic-settings
 pydantic
 python-dotenv
 psutil
 requests
+
+# Financeiro
+yfinance
+
+psutil
+setuptools==68.2.2
+wheel==0.21.0
+
+passlib >= 1.7.4
+
+bcrypt >= 4.0.1

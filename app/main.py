@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from fastapi.openapi.utils import get_openapi
 from starlette.responses import RedirectResponse
 
-from app.db.conexao_postgres import ConexaoDB
+from app.db.conexao_postgres import ConexaoPostgres
+from app.controller.usuario_controller import usuario_controller
 
 app = FastAPI(
   title="Gestão de Investimentos",
@@ -30,8 +30,9 @@ async def teste():
 
   Retorna um objeto JSON com a confirmação de que o sistema está no ar.
   """
-  conexao = ConexaoDB()
+  conexao = ConexaoPostgres()
   conexao.teste()
   
   return {"status": "success", "resultado": "Teste bem-sucedido"}
 
+app.include_router(usuario_controller)
