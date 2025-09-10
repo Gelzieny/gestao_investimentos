@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 
 from app.db.conexao_postgres import ConexaoPostgres
+from app.controller.conta_controller import conta_controller
 from app.controller.usuario_controller import usuario_controller
 
 app = FastAPI(
@@ -36,3 +37,4 @@ async def teste():
   return {"status": "success", "resultado": "Teste bem-sucedido"}
 
 app.include_router(usuario_controller)
+app.include_router(conta_controller)

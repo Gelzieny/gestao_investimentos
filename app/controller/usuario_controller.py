@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Body, HTTPException, Depends
 
-from app.db.conexao_postgres import ConexaoPostgres
-from app.models.usuario_model import UsuarioModel, UsuarioCad, UsuarioAlter
-from app.utils.security import hash_password
 from app.utils.utils import retira_vazios
+from app.utils.security import hash_password
+from app.db.conexao_postgres import ConexaoPostgres
 from app.repository.usuario_repository import UsuarioRepository
+from app.models.usuario_model import UsuarioModel, UsuarioCad, UsuarioAlter
 
 usuario_controller = APIRouter()
 
